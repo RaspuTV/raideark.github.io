@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaideARK ASA Servers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://i.imgur.com/zZfG9Ro.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        .top-left-links {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 10; /* Ensure it appears above other content */
+        }
+        .top-left-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .top-left-links a.discord {
+            background-color: #7289da; /* Discord color */
+        }
+        .top-left-links a.discord:hover {
+            background-color: #5b6eae;
+        }
+        .top-left-links a.tiktok {
+            background-color: #000000; /* TikTok color */
+            color: #ffffff;
+        }
+        .top-left-links a.tiktok:hover {
+            background-color: #333333;
+        }
+        .top-left-links a img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .nav-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 10; /* Ensure it appears above other content */
+        }
+        .nav-bar a {
+            color: #61dafb;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-bar a:hover {
+            color: #21a1f1;
+            transform: scale(1.1);
+        }
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            min-height: 80vh;
+            position: relative; /* For absolute positioning inside */
+        }
+        header {
+            background-color: rgba(97, 218, 251, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            color: #282c34;
+            font-size: 2.5em;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-height: 50vh; /* Limitar la altura para habilitar el scroll */
+            overflow-y: auto; /* Habilitar el scroll vertical */
+        }
+        .section.active {
+            display: block;
+        }
+        .section h2 {
+            border-bottom: 2px solid #61dafb;
+            padding-bottom: 10px;
+            font-size: 2em;
+        }
+        .section p, .section ul {
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .footer {
+            background-color: rgba(32, 35, 42, 0.9);
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: auto;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #61dafb;
+            color: #282c34;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #21a1f1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left-links">
+        <a href="https://discord.gg/4pAphGYFua" target="_blank" rel="noopener" class="discord">
+            <img src="https://i.imgur.com/W3iGWlm.gif" alt="Discord Logo"> Discord
+        </a>
+        <a href="https://www.tiktok.com/@raideark_servidores_asa" target="_blank" rel="noopener" class="tiktok">
+            <img src="https://i.imgur.com/DHsz4ai.gif" alt="TikTok Logo"> TikTok
+        </a>
+    </div>
+    <div class="nav-bar">
+        <a onclick="showSection('inicio')">Inicio</a>
+        <a onclick="showSection('biografia')">Biografía</a>
+        <a onclick="showSection('servidores')">Servidores</a>
+        <a onclick="showSection('donaciones')">Donaciones</a>
+    </div>
+    <div class="content">
+        <header>
+            <h1>RaideARK ASA Servers</h1>
+        </header>
+        <div class="container">
+            <div id="inicio" class="section active">
+                <h2>Bienvenido a RaideARK ASA Servers</h2>
+                <p>🌟 ¡Bienvenido a nuestro servidor x15 en ARK Ascended! En RaideARK ASA, hemos creado un espacio único para jugadores apasionados como tú. Prepárate para una experiencia de juego enriquecida con características exclusivas que llevarán tu aventura a un nuevo nivel.</p>
+                <p>🛡️ Características del Servidor:</p>
+                        <ul>
+                            <li>🚀 Servidor x15: Disfruta de una experiencia de juego rápida y emocionante con tasas de experiencia, farmeo y crianza aumentadas.</li>
+                            <li>🏔️ Cuevas Modificadas: Explora nuevas y emocionantes cuevas adaptadas especialmente para nuestro servidor.</li>
+                            <li>🛠️ Mods Exclusivos: Disfruta de una serie de mods diseñados específicamente para mejorar tu experiencia de juego, incluyendo:
+                            <li>🌟 Logotipo 3D Colocable: Personaliza tu base con el logotipo 3D de RaideARK.</li>
+                            <li>🛡️ Protección para Nuevos Jugadores: Un elemento especial para asegurar una entrada segura para los nuevos jugadores.</li>
+                            <li>📍  Zonas PvE: Crea y administra zonas PvE con el logotipo 3D correspondiente.</li>
+                            <li>🔨 RaideARK Smithy: Un banco de trabajo que te permite fabricar bolas, flechas y tiene un inventario ampliado.</li>
+                            <li>🧰 Fabricante RaideARK: Un fabricante con ranuras de inventario ampliadas y funcionamiento silencioso.</li>
+                            <li>⚙️ Forja Industrial RaideARK: Una forja más compacta con más espacios de inventario y mayor velocidad de elaboración.</li>
+                            <li>🔬 RaideARK Tek Replicator: Un replicador Tek más pequeño y eficiente.</li>
+                            <li>🔄 Elemento Transferible RaideARK: Facilita el traslado de Elemento y Fragmentos entre mapas.</li>
+                    </li>
+                            <li>🔗 Marca de Agua y Menú de Pausa: Con código QR, botón de Discord y TikTok para mantenerte conectado con nuestra comunidad.</li>
+                </ul>
+                <a href="#biografia" class="button">Más Información</a>
+            </div>
+            <div id="biografia" class="section">
+                <h2>Biografía</h2>
+                <p>🌟 ¡Hace 6 años, durante la pandemia de COVID-19, un grupo de amigos (Raspu, Cristian, Xavi, Fake, Fabio, Joan y Kuailer) decidió crear un servidor por pura diversión, sin tener mucha idea de cómo administrarlo!</p>
+                <p>🚀 Raspu tomó el mando y comenzó a alojarlo en su PC. Pronto, el servidor se volvió muy popular, y los ataques DDoS nos llevaron a contratar un servicio de alojamiento profesional. Con este nuevo host, pudimos lanzar 12 mapas y establecer un clúster en condiciones óptimas.</p>
+                <p>🛠️ Empezamos a implementar plugins, lo que catapultó la popularidad del servidor. La demanda fue tan alta que recibimos muchas donaciones, lo que nos ayudó a mantener el servidor en funcionamiento.</p>
+                <p>🎉 ¡Pero esto es solo el comienzo! Estamos emocionados de anunciar la apertura de un nuevo servidor x15 Small Tribes, con cuevas modificadas, protección para nuevos jugadores y mods exclusivos diseñados por nuestra comunidad RaideARK. 🌍 Este nuevo servidor estará en Ark ASA, no en Evolved.</p>
+                <p>💖 Queremos agradecer sinceramente a todos por la confianza que nos han brindado a lo largo de estos años, incluyendo a quienes, con sus críticas, nos hicieron más fuertes. Si quieren seguir siendo parte de RaideARK, deberán unirse a nuestro nuevo servidor en ASA.</p>
+                <p>🙌 Un abrazo a todos y mil gracias por estos años increíbles. ¡Nos vemos en ASA!</p>
+                <p><strong>| Administración de RaideARK |</strong></p>
+                <a href="#servidores" class="button" onclick="showSection('servidores')">Ver Servidores</a>
+            </div>
+            <div id="servidores" class="section">
+                <h2>ℹ️ Información Del Servidor RaideARK ASA</h2>
+                <p><strong>Características:</strong></p>
+                <ul>
+                    <li>🛡️ Protección a nuevos jugadores de: 2 días (pedir al admin)</li>
+                    <li>🔄 Crossplay</li>
+                    <li>🏔️ Cuevas nuevas y modificadas</li>
+                    <li>📈 Nivel máximo del jugador: 105 + Ascensiones</li>
+                    <li>🦖 Dino salvaje máximo: 150</li>
+                    <li>👥 Tamaño de la tribu: 6</li>
+                    <li>🐉 Límite de dinos en tribu: 500</li>
+                    <li>📊 Exp: x5</li>
+                    <li>⚖️ Peso: x5</li>
+                    <li>🍖 Tameo: x5</li>
+                    <li>⛏️ Farmeo: x5</li>
+                    <li>🐣 Crianza: x5</li>
+                    <li>💎 Stats de Recursos: x200</li>
+                    <li>🌱 Velocidad de cultivos: x10</li>
+                    <li>🛡️ Límite de torretas: 120</li>
+                    <li>📜 Engramas automáticos excepto el Tek</li>
+                    <li>🧠 Mindwipes ilimitadas</li>
+                    <li>👁️ 3ª Persona</li>
+                    <li>🗺️ Ubicación en el mapa del jugador</li>
+                    <li>🦅 Sí voladores en cuevas</li>
+                    <li>🕰️ Dino decay</li>
+                    <li>🏗️ Estructuras decay</li>
+                    <li>❌ No alianzas</li>
+                    <li>🏆 Recompensas por hacer spam del servidor</li>
+                    <li>🌍 Mapas Principales: The Island, The Center</li>
+                    <li>🏪 Mercado físico con tiendas de venta, compra, kit y forja para conseguir la moneda de RaideARK Coins</li>
+                </ul>
+                <p><strong>🔧 Mods:</strong></p>
+                <ul>
+                    <li>Custom Dino Levels</li>
+                    <li>Resonants Shop Mod</li>
+                    <li>Utilities Plus</li>
+                    <li>Pelayoris Cryo Storage</li>
+                    <li>Super Spyglass Plus</li>
+                    <li>Element Travel</li>
+                    <li>Ez Engrams Unlocker</li>
+                    <li>Solo Farm Mod</li>
+                    <li>Pull It!</li>
+                    <li>ARKomatic</li>
+                    <li>Discovery World</li>
+                    <li>Automated Dino Wipes</li>
+                    <li>Admin Sing</li>
+                    <li>RaideARK Protección</li>
+                    <li>RaideARK Logo 3D</li>
+                    <li>Mod de la comunidad RaideARK</li>
+                </ul>
+            </div>
+            <div id="donaciones" class="section">
+                <h2>🙌 Apoya a la Comunidad RaideARK ASA 💖</h2>
+                <p><strong>🔹 Desarrollar Mods Propios:</strong><br>Crearemos contenido único que enriquecerá tu experiencia de juego.</p>
+                <p><strong>🔹 Mejorar la Infraestructura:</strong><br>Mantendremos y actualizaremos nuestros servidores para garantizar un rendimiento óptimo.</p>
+                <p><strong>🔹 Organizar Eventos Especiales:</strong><br>Competencias y eventos emocionantes para todos los jugadores.</p>
+                <p><strong>🔹 Fomentar una Comunidad Activa:</strong><br>Apoyar a nuevos jugadores y mantener un ambiente amigable.</p>
+                <p>Cada contribución, sin importar su tamaño, hace una gran diferencia. Si deseas ayudar a nuestra comunidad a prosperar, considera hacer una donación.</p>
+                <a href="https://discord.gg/qKtcuv59GC" class="button" target="_blank" rel="noopener">Únete a nuestro Discord de Donaciones</a>
+                <p>¡Gracias por ser parte de RaideARK ASA! Juntos, hacemos de este servidor un lugar increíble para jugar.</p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>All rights reserved | Ⓒ RaideARK ASA Servers 2020</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
