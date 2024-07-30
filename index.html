@@ -69,6 +69,7 @@
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s, transform 0.3s;
+            cursor: pointer; /* Make sure the cursor shows it's clickable */
         }
         .nav-bar a:hover {
             color: #21a1f1;
@@ -148,10 +149,23 @@
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer; /* Ensure the button looks clickable */
         }
         .button:hover {
             background-color: #21a1f1;
             transform: scale(1.05);
+        }
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .video-grid iframe {
+            width: 300px;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -169,6 +183,7 @@
         <a onclick="showSection('biografia')">Biografía</a>
         <a onclick="showSection('servidores')">Servidores</a>
         <a onclick="showSection('donaciones')">Donaciones</a>
+        <a onclick="showSection('videos')">Videos</a>
     </div>
     <div class="content">
         <header>
@@ -179,22 +194,24 @@
                 <h2>Bienvenido a RaideARK ASA Servers</h2>
                 <p>🌟 ¡Bienvenido a nuestro servidor x15 en ARK Ascended! En RaideARK ASA, hemos creado un espacio único para jugadores apasionados como tú. Prepárate para una experiencia de juego enriquecida con características exclusivas que llevarán tu aventura a un nuevo nivel.</p>
                 <p>🛡️ Características del Servidor:</p>
+                <ul>
+                    <li>🚀 Servidor x15: Disfruta de una experiencia de juego rápida y emocionante con tasas de experiencia, farmeo y crianza aumentadas.</li>
+                    <li>🏔️ Cuevas Modificadas: Explora nuevas y emocionantes cuevas adaptadas especialmente para nuestro servidor.</li>
+                    <li>🛠️ Mods Exclusivos: Disfruta de una serie de mods diseñados específicamente para mejorar tu experiencia de juego, incluyendo:
                         <ul>
-                            <li>🚀 Servidor x15: Disfruta de una experiencia de juego rápida y emocionante con tasas de experiencia, farmeo y crianza aumentadas.</li>
-                            <li>🏔️ Cuevas Modificadas: Explora nuevas y emocionantes cuevas adaptadas especialmente para nuestro servidor.</li>
-                            <li>🛠️ Mods Exclusivos: Disfruta de una serie de mods diseñados específicamente para mejorar tu experiencia de juego, incluyendo:
                             <li>🌟 Logotipo 3D Colocable: Personaliza tu base con el logotipo 3D de RaideARK.</li>
                             <li>🛡️ Protección para Nuevos Jugadores: Un elemento especial para asegurar una entrada segura para los nuevos jugadores.</li>
-                            <li>📍  Zonas PvE: Crea y administra zonas PvE con el logotipo 3D correspondiente.</li>
+                            <li>📍 Zonas PvE: Crea y administra zonas PvE con el logotipo 3D correspondiente.</li>
                             <li>🔨 RaideARK Smithy: Un banco de trabajo que te permite fabricar bolas, flechas y tiene un inventario ampliado.</li>
                             <li>🧰 Fabricante RaideARK: Un fabricante con ranuras de inventario ampliadas y funcionamiento silencioso.</li>
                             <li>⚙️ Forja Industrial RaideARK: Una forja más compacta con más espacios de inventario y mayor velocidad de elaboración.</li>
                             <li>🔬 RaideARK Tek Replicator: Un replicador Tek más pequeño y eficiente.</li>
                             <li>🔄 Elemento Transferible RaideARK: Facilita el traslado de Elemento y Fragmentos entre mapas.</li>
-                    </li>
                             <li>🔗 Marca de Agua y Menú de Pausa: Con código QR, botón de Discord y TikTok para mantenerte conectado con nuestra comunidad.</li>
+                        </ul>
+                    </li>
                 </ul>
-                <a href="#biografia" class="button">Más Información</a>
+                <a href="#biografia" class="button" onclick="showSection('biografia')">Más Información</a>
             </div>
             <div id="biografia" class="section">
                 <h2>Biografía</h2>
@@ -268,7 +285,13 @@
                 <a href="https://discord.gg/qKtcuv59GC" class="button" target="_blank" rel="noopener">Únete a nuestro Discord de Donaciones</a>
                 <p>¡Gracias por ser parte de RaideARK ASA! Juntos, hacemos de este servidor un lugar increíble para jugar.</p>
             </div>
-        </div>
+            <div id="videos" class="section">
+                <h2>Últimos Videos de TikTok</h2>
+                <div class="video-grid">
+                    <!-- Código del widget de TikTok -->
+                    <iframe src="https://www.tiktok.com/embed/@raideark_servidores_asa" width="100%" height="600" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+            </div>
         <footer class="footer">
             <p>All rights reserved | Ⓒ RaideARK ASA Servers 2020</p>
         </footer>
@@ -282,6 +305,9 @@
             });
             document.getElementById(sectionId).classList.add('active');
         }
+
+        // Optional: Set the default section to display
+        // showSection('inicio');
     </script>
 </body>
 </html>
